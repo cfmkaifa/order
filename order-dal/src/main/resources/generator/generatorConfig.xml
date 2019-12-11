@@ -26,7 +26,8 @@
             <property name="suppressAllComments" value="true"/>
         </commentGenerator>
         <!--数据库链接URL，用户名、密码 -->
-        <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://129.211.88.251:3306/forbesbusiness" userId="forbesbusiness" password="ehjnCaMGC2ttKDDY">
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://129.211.88.251:3306/forbesorder" userId="forbesorder" password="NNrtB47ce2cR544d
+">
         </jdbcConnection>
         <javaTypeResolver>
             <property name="forceBigDecimals" value="false"/>
