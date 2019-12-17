@@ -2,13 +2,22 @@ package org.forbes.dal.entity;
 
 import java.math.BigDecimal;
 import java.util.Date;
+
+import com.baomidou.mybatisplus.annotation.TableName;
+import io.swagger.annotations.ApiModel;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 /**
  * Table: f_order_item
  */
 @Data
+@ApiModel(description="订单项目信息")
+@EqualsAndHashCode(callSuper = false)
+@TableName("f_order_item")
 public class OrderItem extends BaseEntity {
+
+    private static final long serialVersionUID = -7939944594947152239L;
     /**
      * 主键
      * Table:     f_order_item

@@ -2,52 +2,22 @@ package org.forbes.dal.entity;
 
 import java.math.BigDecimal;
 import java.util.Date;
+
+import com.baomidou.mybatisplus.annotation.TableName;
+import io.swagger.annotations.ApiModel;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 /**
  * Table: f_order
  */
 @Data
+@ApiModel(description="订单信息")
+@EqualsAndHashCode(callSuper = false)
+@TableName("f_order")
 public class Order extends BaseEntity {
-    /**
-     * 主键
-     * Table:     f_order
-     * Column:    id
-     * Nullable:  false
-     */
-    private Long id;
 
-    /**
-     * Table:     f_order
-     * Column:    create_by
-     * Nullable:  true
-     */
-    private String createBy;
-
-    /**
-     * 创建时间
-     * Table:     f_order
-     * Column:    create_time
-     * Nullable:  true
-     */
-    private Date createTime;
-
-    /**
-     * 更新人
-     * Table:     f_order
-     * Column:    update_by
-     * Nullable:  true
-     */
-    private String updateBy;
-
-    /**
-     * 更新时间
-     * Table:     f_order
-     * Column:    update_time
-     * Nullable:  true
-     */
-    private Date updateTime;
-
+    private static final long serialVersionUID = 4471537549913649217L;
     /**
      * 总金额
      * Table:     f_order
@@ -171,7 +141,7 @@ public class Order extends BaseEntity {
      * Column:    status
      * Nullable:  true
      */
-    private Integer status;
+    private String status;
 
     /**
      * 邮编
