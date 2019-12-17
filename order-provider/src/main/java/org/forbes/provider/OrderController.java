@@ -4,6 +4,7 @@ import io.swagger.annotations.*;
 import lombok.extern.slf4j.Slf4j;
 import org.forbes.biz.IOrderService;
 import org.forbes.comm.enums.BizResultEnum;
+import org.forbes.comm.enums.OrderStausEnum;
 import org.forbes.comm.utils.ConvertUtils;
 import org.forbes.comm.vo.Result;
 import org.forbes.dal.entity.Order;
@@ -34,12 +35,12 @@ public class OrderController {
     public Result<Order> freeThawOrder(@PathVariable Long id,
                                        @RequestParam(value="status",required=true)String status){
         Result<Order> result=new Result<Order>();
-//        boolean isUserStatus = UserStausEnum.existsUserStausEnum(status);
-//        if(!isUserStatus){
-//            result.setBizCode(BizResultEnum.ORDER_STATUS_NO_EXISTS.getBizCode());
-//            result.setMessage(String.format(BizResultEnum.ORDER_STATUS_NO_EXISTS.getBizFormateMessage(), status));
-//            return result;
-//        }
+        boolean isUserStatus = OrderStausEnum.existsOrderStausEnum(status);
+        if(!isUserStatus){
+            result.setBizCode(BizResultEnum.ORDER_STATUS_NO_EXISTS.getBizCode());
+            result.setMessage(String.format(BizResultEnum.ORDER_STATUS_NO_EXISTS.getBizFormateMessage(), status));
+            return result;
+        }
         Order order = orderService.getById(id);
         if(ConvertUtils.isEmpty(order)){
             result.setBizCode(BizResultEnum.ENTITY_EMPTY.getBizCode());
