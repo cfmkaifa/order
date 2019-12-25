@@ -7,4 +7,19 @@
     <include refid="org.forbes.dal.mapper.OrderMapper.Base_Column_List" />
   </sql>
 
+  <select id="pageUsers" parameterType="org.forbes.comm.model.OrderPageDto" resultMap="org.forbes.comm.vo.OrderVo">
+    SELECT
+    <include refid="Base_Column_List" />
+    FROM
+    f_order AS o
+    <where>
+      <if test="orderPageDto.status != null and orderPageDto.status != '' and orderPageDto.status != 'null'">
+        AND o.status=#{orderPageDto.status,jdbcType=VARCHAR}
+      </if>
+      <if test="orderPageDto.id != null and orderPageDto.id  != '' and orderPageDto.id  != 'null'">
+        AND o.id=#{orderPageDto.id,jdbcType=BIGINT}
+      </if>
+    </where>
+  </select>
+
 </mapper>

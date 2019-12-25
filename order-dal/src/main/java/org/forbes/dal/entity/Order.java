@@ -18,6 +18,7 @@ import lombok.EqualsAndHashCode;
 public class Order extends BaseEntity {
 
     private static final long serialVersionUID = 4471537549913649217L;
+
     /**
      * 总金额
      * Table:     f_order

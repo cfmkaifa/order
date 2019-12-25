@@ -29,6 +29,14 @@ public class Result<T> implements Serializable {
 	public static final  String COMM_ACTION_MSG = "操作成功";
 	public static final  String COMM_ACTION_ERROR_MSG = "操作失败";
 
+	/******查询订单信息****/
+	public static final  String ORDER_MSG = "查询所有订单成功";
+	public static final  String ORDER_NOT_ERROR_MSG = "查询所有订单失败";
+
+	/******订单编码信息****/
+	public static final  String EXISTS_ORDER_SN_MSG = "订单编码已存在";
+	public static final  String AVAILABLE_ORDER_SN_MSG = "订单编码可用";
+
 
 	/**
 	 * 返回代码

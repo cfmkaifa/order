@@ -8,7 +8,7 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 /***
- * UserStausEnum概要说明：用户状态
+ * OrderStausEnum概要说明：订单状态
  * @author Huanghy
  */
 public enum OrderStausEnum {
